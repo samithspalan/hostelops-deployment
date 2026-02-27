@@ -10,18 +10,18 @@ services:
       - hostel-network
 
   backend:
-    build: ../Hostel-Management-Backend
+    image: samithspalan/hostel-backend:latest
     container_name: backend
     restart: always
     env_file:
-      - ../Hostel-Management-Backend/.env
+      - .env
     depends_on:
       - mongo
     networks:
       - hostel-network
 
   frontend:
-    build: ../Hostel-Complaint-Management-System
+    image: samithspalan/hostel-frontend:latest
     container_name: frontend
     restart: always
     networks:
@@ -30,6 +30,7 @@ services:
   nginx:
     image: nginx:alpine
     container_name: nginx
+    restart: always
     ports:
       - "80:80"
     volumes:
