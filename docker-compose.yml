@@ -10,7 +10,7 @@ services:
       - hostel-network
 
   backend:
-    image: samithspalan/hostel-backend:latest
+    image: samithspalan/deployment-backend:latest
     container_name: backend
     restart: always
     env_file:
@@ -21,7 +21,7 @@ services:
       - hostel-network
 
   frontend:
-    image: samithspalan/hostel-frontend:latest
+    image: samithspalan/deployment-frontend:latest
     container_name: frontend
     restart: always
     networks:
